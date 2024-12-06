@@ -1,0 +1,35 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order 67868</title>
+    </head>
+    <body>
+        <h1>Order 67868</h1>
+        <p><strong>Item:</strong> hjhem</p>
+        <p><strong>Quantity:</strong> jtemu</p>
+        <p><strong>Price:</strong> yj</p>
+        
+        <p><strong>Mark as Delivered:</strong></p>
+        <input type="checkbox" id="deliveryCheckbox" onchange="updateDeliveryStatus()">
+        <label for="deliveryCheckbox">Delivered</label>
+        
+        <script>
+            function updateDeliveryStatus() {
+                const isChecked = document.getElementById('deliveryCheckbox').checked;
+                fetch('https://script.google.com/macros/s/YOUR_WEB_APP_URL/exec', {
+  method: 'POST',
+  body: JSON.stringify({ orderNumber: '67868', delivered: isChecked }),
+  headers: { 'Content-Type': 'application/json' }
+}).then(response => response.json()).then(data => {
+                    alert('Delivery status updated!');
+                }).catch(error => {
+                    alert('Error updating status: ' + error);
+                });
+            }
+        </script>
+    </body>
+    </html>
+  
