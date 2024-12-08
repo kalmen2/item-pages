@@ -1,0 +1,116 @@
+
+    <html>
+      <head>
+        <title>Item 1111: Widget A</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+          }
+          .container {
+            display: flex;
+            flex-direction: column; /* Stack the form fields vertically */
+            justify-content: flex-start;
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            align-items: flex-start;
+          }
+          .order-details {
+            font-size: 18px;
+            margin-bottom: 20px;
+          }
+          .order-details p {
+            margin: 10px 0;
+          }
+          .label {
+            font-weight: bold;
+            color: #555;
+          }
+          .value {
+            color: #333;
+            margin-left: 10px;
+          }
+          h1 {
+            color: #333;
+            font-size: 24px;
+          }
+          .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+          }
+
+          /* Styling for the select container */
+          .select-container {
+            display: flex;
+            flex-direction: row; /* Align number input and select horizontally */
+            align-items: center;
+            gap: 10px;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+          }
+
+          .select-container label {
+            font-weight: bold;
+            color: #444;
+            margin-right: 10px;
+          }
+
+          select, input[type="number"] {
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+          }
+          input[type="number"] {
+            width: 80px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <!-- Order Details -->
+          <div class="order-details">
+            <h1>Item 1111: Widget A</h1>
+            <p><span class="label">Order Date:</span><span class="value">2626262</span></p>
+            <p><span class="label">Quantity:</span><span class="value">undefined</span></p>
+            <p><span class="label">Store:</span><span class="value">undefined</span></p>
+            <p><span class="label">Cost:</span><span class="value">$undefined</span></p>
+            <p><span class="label">Payback:</span><span class="value">$undefined</span></p>
+          </div>
+
+          <!-- First Select Container -->
+          <div class="select-container">
+            <input type="number" id="quantityInput1" name="quantity" placeholder="Enter number" />
+            <label for="region1">Select Region:</label>
+            <select id="region1" name="region">
+              <option value="BFMR">BFMR</option>
+              <option value="USA" selected>USA</option>
+            </select>
+          </div>
+
+          <!-- Second Select Container -->
+          <div class="select-container">
+            <input type="number" id="quantityInput2" name="quantity" placeholder="Enter number" />
+            <label for="region2">Select Region:</label>
+            <select id="region2" name="region">
+              <option value="BFMR">BFMR</option>
+              <option value="USA" selected>USA</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="footer">
+          <p>This page is automatically generated. More details will be added soon!</p>
+        </div>
+      </body>
+    </html>
+  
