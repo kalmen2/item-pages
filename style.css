@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+}
+
+.order-details {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.order-details p {
+    margin: 10px 0;
+}
+
+.label {
+    font-weight: bold;
+    color: #555;
+}
+
+.value {
+    color: #333;
+    margin-left: 10px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Styling for the select container */
+.select-container {
+    display: flex;
+    flex-direction: row;
+    /* Align number input and select horizontally */
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    /* Align the form fields to the left */
+    margin-bottom: 20px;
+    width: 100%;
+    /* Make sure it takes up full width */
+}
+
+.select-container input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.select-container select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
