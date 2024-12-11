@@ -62,14 +62,19 @@ const elements = KEYS.reduce((acc, id) => {
     return acc;
 }, {});
 
-const urlParams = new URLSearchParams(window.location.search);
+const params = window.location.search || '';
+
+const urlParams = new URLSearchParams(params);
 const itemId = urlParams.get('itemId');
 
 (async () => {
-    const response = await fetch(APP_URL);
+    const response = await fetch(`${APP_URL}${params}`);
     const items = await response.json();
 
-    const data = items.find(item => item.itemId === itemId);
+    console.log(items);
+    
+    const data = typeof items === 'object' &&
+        Array.isArray(items) ? items.find(item => item.itemId === itemId) : items;
 
     Object.keys(data).forEach(key => {
         const element = elements[key];
