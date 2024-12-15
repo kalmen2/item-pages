@@ -16,7 +16,7 @@ const KEYS = [
 const APP_URL = 'https://script.google.com/macros/s/AKfycbwRIuv4W5SO8GPypd6l_Dqp5aS1zSV0cHF8W9rX8EAMue1KCJzCYqpjb0E8m_W-kOEK/exec';
 const params = window.location.search || '';
 const appFetch = async (info) => {
-    const response = await fetch(`${APP_URL}${params}`, info);
+    const response = await fetch(`${APP_URL}${params}`, { method: 'POST', ...info });
     return response.json();
 };
 
@@ -41,7 +41,7 @@ async function getData() {
     const res = await appFetch();
 
     if (typeof res === 'object') {
-        data = Array.isArray(res) ? res.find(item => item.itemId === itemId) : res;
+        data = res;
 
         Object.keys(data).forEach(key => {
             const element = elements[key];
@@ -82,11 +82,6 @@ async function saveData() {
     if (!Object.keys(postData).length) return;
 
     const res = await appFetch({
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify(postData),
     });
 
