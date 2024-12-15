@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Item Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Order Details -->
+        <div class="order-details">
+            <h1>Item <span id="itemId"></span>: <span id="itemName"></span></h1>
+            <p>
+                <span class="label">Order Date:</span>
+                <span id="orderDate" class="value"></span>
+            </p>
+            <p>
+                <span class="label">Quantity:</span>
+                <span id="quantity" class="value"></span>
+            </p>
+            <p>
+                <span class="label">Store:</span>
+                <span id="store" class="value"></span>
+            </p>
+            <p>
+                <span class="label">Cost:</span>
+                <span id="cost" class="value"></span>
+            </p>
+            <p>
+                <span class="label">Payback:</span>
+                <span id="payback" class="value"></span>
+            </p>
+
+            <p>
+                <span class="label">BFMR:</span>
+                <input type="number" id="bfmr" placeholder="quantity" min="1" />
+            </p>
+            <p>
+                <span class="label">USA:</span>
+                <input type="number" id="usa" placeholder="quantity" min="1" />
+            </p>
+            <p>
+                <span class="label">B&M:</span>
+                <input type="number" id="b&m" placeholder="quantity" min="1" />
+            </p>
+        </div>
+
+        <button id="saveBtn">SAVE</button>
+    </div>
+
+    <div class="footer">
+        <p>This page is automatically generated. More details will be added soon!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
