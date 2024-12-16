@@ -16,8 +16,15 @@ const KEYS = [
 const APP_URL = 'https://script.google.com/macros/s/AKfycbwRIuv4W5SO8GPypd6l_Dqp5aS1zSV0cHF8W9rX8EAMue1KCJzCYqpjb0E8m_W-kOEK/exec';
 const params = window.location.search || '';
 const appFetch = async (info) => {
-    const response = await fetch(`${APP_URL}${params}`, { method: 'POST', ...info });
-    return response.json();
+    try {
+        saveBtnStatus(false);
+        const response = await fetch(`${APP_URL}${params}`, { method: 'POST', ...info });
+        return response.json();
+    } catch (error) {
+        alert(error);
+    } finally {
+        saveBtnStatus(true);
+    }
 };
 
 const elements = KEYS.reduce((acc, id) => (
@@ -95,6 +102,10 @@ async function saveData() {
 }
 
 //
+
+function saveBtnStatus(status) {
+    status ? saveBtn.removeAttribute('disabled') : saveBtn.setAttribute('disabled', '');
+}
 
 function formatDate(value) {
     const date = new Date(value);
